@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp">
 <head>
 	<title>ngEmployees</title>
 	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
 </head>
 <body>
 <!-- 
@@ -17,17 +18,5 @@ An expression can be a combination of symbols that does something like addition,
 		<h1>{{author.name}}</h1>
 		<p>{{author.title+ ','+author.company}}</p>
 	</div>
-
-	<script type="text/javascript">
-		// Controller defines the connection between database and view
-		function MyController($scope){
-			// MODEL is the data from database
-			$scope.author = {
-				'name': 'Kiran Dash',
-				'title': 'Web Developer',
-				'company': 'Infasta Soft Solutions Pvt. Ltd.'
-			}
-		}
-	</script>
 </body>
 </html>
