@@ -11,5 +11,23 @@ An expression can be a combination of symbols that does something like addition,
 -->
 	<input type="text" ng-model="name">
 	<h2>Welcome {{name}}</h2>
+
+	<!-- View shows the final result -->
+	<div ng-controller="MyController">
+		<h1>{{author.name}}</h1>
+		<p>{{author.title+ ','+author.company}}</p>
+	</div>
+
+	<script type="text/javascript">
+		// Controller defines the connection between database and view
+		function MyController($scope){
+			// MODEL is the data from database
+			$scope.author = {
+				'name': 'Kiran Dash',
+				'title': 'Web Developer',
+				'company': 'Infasta Soft Solutions Pvt. Ltd.'
+			}
+		}
+	</script>
 </body>
 </html>
