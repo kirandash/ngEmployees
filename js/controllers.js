@@ -1,4 +1,6 @@
-var artistsControllers = angular.module('myApp', []);
+// Controller for Lists/Routing
+
+var artistsControllers = angular.module('artistsControllers', []);
 // Namespaces are used to protect variables
 // While myApp are used as module, they are different but mostly given same name
 
