@@ -15,3 +15,15 @@ artistsControllers.controller('ListController', ['$scope', '$http', function($sc
 	// Note httprequest will not work on chrome until run on a server. because chrome's policy says that you must have both the requesting and requested file on same server
 
 }]);
+
+// Detailed controller for route after click on an element in list
+artistsControllers.controller('DetailsController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+	// MODEL is the data from database
+	$http.get("js/data.json").success(function(data){
+		$scope.artists = data;
+		// get data of which item is clicked from $routeParams url's itemId
+		$scope.whichItem = $routeParams.itemId;
+	});
+	// Note httprequest will not work on chrome until run on a server. because chrome's policy says that you must have both the requesting and requested file on same server
+
+}]);
