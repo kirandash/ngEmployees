@@ -6,6 +6,8 @@ myNameSpace.controller('MyController', ['$scope', '$http', function($scope, $htt
 	// MODEL is the data from database
 	$http.get("js/data.json").success(function(data){
 		$scope.artists = data;
+		// Initialize some data if necessary
+		$scope.artistOrder = 'name';
 	});
 	// Note httprequest will not work on chrome until run on a server. because chrome's policy says that you must have both the requesting and requested file on same server
 
