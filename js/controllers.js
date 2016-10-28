@@ -23,6 +23,23 @@ artistsControllers.controller('DetailsController', ['$scope', '$http', '$routePa
 		$scope.artists = data;
 		// get data of which item is clicked from $routeParams url's itemId
 		$scope.whichItem = $routeParams.itemId;
+
+		if($routeParams.itemId > 0) {
+			// $routeParams.itemId will return string and thus must be converted to number
+			$scope.prevItem = Number($routeParams.itemId) - 1;
+		}else{
+			// If first item then the prev item should be the last one
+			$scope.prevItem =  $scope.artists.length - 1;
+		}
+
+		if($routeParams.itemId < $scope.artists.length - 1) {
+			// $routeParams.itemId will return string and thus must be converted to number
+			$scope.nextItem = Number($routeParams.itemId) + 1;
+		}else{
+			// If first item then the prev item should be the last one
+			$scope.nextItem = 0;
+		}
+
 	});
 	// Note httprequest will not work on chrome until run on a server. because chrome's policy says that you must have both the requesting and requested file on same server
 
